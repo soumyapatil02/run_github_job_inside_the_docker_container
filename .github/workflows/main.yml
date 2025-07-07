@@ -1,0 +1,13 @@
+yaml
+name: Container Test
+on: [push]
+
+jobs:
+  quick-test:
+    runs-on: ubuntu-latest
+    container: node:18
+    steps:
+      - run: echo "I'm running inside Docker!"
+      - run: whoami
+      - run: pwd
+      - run: ls -la
