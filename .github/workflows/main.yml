@@ -1,4 +1,3 @@
-yaml
 name: Container Test
 on: [push]
 
