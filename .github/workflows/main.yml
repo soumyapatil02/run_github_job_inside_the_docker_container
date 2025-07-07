@@ -1,12 +1,22 @@
-name: Container Test
+name: Python Container Test
 on: [push]
 
 jobs:
   quick-test:
     runs-on: ubuntu-latest
-    container: node:18
+    container: python:3.9
     steps:
-      - run: echo "I'm running inside Docker!"
-      - run: whoami
-      - run: pwd
-      - run: ls -la
+      - name: Get my code
+        uses: actions/checkout@v3
+      
+      - name: Show what's in my repo
+        run: ls -la
+      
+      - name: Run my Python app
+        run: python app.py
+      
+      - name: Check Python version
+        run: python --version
+      
+      - name: Check pip version
+        run: pip --version
