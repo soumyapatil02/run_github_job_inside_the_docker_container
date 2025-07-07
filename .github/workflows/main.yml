@@ -13,7 +13,7 @@ jobs:
         run: ls -la
       
       - name: Run my Python app
-        run: python app.py
+        run: python code.py
       
       - name: Check Python version
         run: python --version
